@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kitchen Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/hub.css">
+</head>
+<body>
+  <!-- The screen is designed at 1920x1080 and scaled to fit any TV or browser window -->
+  <div class="stage" id="stage">
+
+    <!-- DAY VIEW -->
+    <div class="view day" id="dayView">
+      <div class="backdrop" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
+
+      <header class="top">
+        <div>
+          <div class="date" id="date"></div>
+          <div class="clock" id="clock"></div>
+        </div>
+        <p class="summary" id="summary"></p>
+      </header>
+
+      <main class="grid">
+        <section class="glass tall">
+          <h2 class="label red">TODAY</h2>
+          <div id="events" class="events"></div>
+        </section>
+
+        <section class="glass spread">
+          <h2 class="label green">NEXT PRAYER</h2>
+          <div>
+            <div class="big-title" id="nextName"></div>
+            <div class="big-num" id="nextIn"></div>
+            <div class="muted" id="nextAt"></div>
+          </div>
+          <div class="prayer-row" id="prayerRow"></div>
+        </section>
+
+        <section class="glass spread">
+          <h2 class="label blue">WEATHER</h2>
+          <div id="weather" class="weather"></div>
+        </section>
+
+        <section class="glass tall">
+          <div class="label-row"><h2 class="label orange">GROCERIES</h2><span class="muted small" id="groceryCount"></span></div>
+          <div id="groceries"></div>
+        </section>
+
+        <section class="glass spread">
+          <h2 class="label indigo" id="worldName"></h2>
+          <div>
+            <div class="big-num" id="worldTime"></div>
+            <div class="muted" id="worldSub"></div>
+          </div>
+          <div class="call" id="worldCall"></div>
+        </section>
+
+        <section class="glass spread">
+          <h2 class="label rose">DINNER</h2>
+          <div>
+            <div class="muted">Tonight</div>
+            <div class="dish" id="dinnerTonight"></div>
+          </div>
+          <div class="muted" id="dinnerTomorrow"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- NIGHT VIEW: dim, low-light ambient screen -->
+    <div class="view night" id="nightView" hidden>
+      <div class="backdrop" aria-hidden="true"><i class="n1"></i><i class="n2"></i><i class="n3"></i></div>
+      <div class="night-top">
+        <div>
+          <div class="night-clock" id="nClock"></div>
+          <div class="night-sub" id="nSub"></div>
+        </div>
+        <div class="dark-glass night-prayer">
+          <div class="cap">NEXT PRAYER</div>
+          <div class="night-count" id="nNextIn"></div>
+          <div class="night-sub small" id="nNextAt"></div>
+        </div>
+      </div>
+      <div class="night-cards">
+        <div class="dark-glass"><div class="cap">TOMORROW</div><div class="nc-main" id="nTomorrow"></div><div class="nc-sub" id="nTomorrowSub"></div></div>
+        <div class="dark-glass"><div class="cap" id="nWorldName"></div><div class="nc-main" id="nWorldTime"></div><div class="nc-sub" id="nWorldSub"></div></div>
+        <div class="dark-glass"><div class="cap">GROCERIES</div><div class="nc-main" id="nGroceries"></div><div class="nc-sub">Tap the fridge sticker to add</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/tv.js"></script>
+</body>
+</html>

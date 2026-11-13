@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ECE8F4">
+  <title>Dinner plan · Kitchen Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/phone.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
+  <main class="page">
+    <div class="brand">KITCHEN HUB</div>
+    <div>
+      <h1>Dinner this week</h1>
+      <div class="sub">রাতের খাবারের পরিকল্পনা · <span id="range"></span></div>
+    </div>
+
+    <div class="days" role="group" aria-label="Day" id="days"></div>
+
+    <div class="card">
+      <div class="caption" id="selLabel"></div>
+      <div style="font-size: 24px; font-weight: 700; letter-spacing: -.4px" id="selDish"></div>
+      <div id="needs"></div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <div style="font-size: 20px; font-weight: 700">Family dishes</div>
+      <div class="sub" id="tapHint"></div>
+    </div>
+    <div class="dishes" id="dishes"></div>
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/dinner.js"></script>
+</body>
+</html>
