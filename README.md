@@ -2,6 +2,8 @@
 
 A family dashboard for a wall-mounted TV in the kitchen. It shows what the household needs at a glance, like today's appointments, the grocery list, the week's dinners, prayer times, weather in the cities where family lives, and the time in Dhaka. Anyone can add to it by tapping their phone on a sticker on the fridge.
 
+**[Live demo](https://nilima04.github.io/kitchen-hub/)** · Phone pages: [Groceries](https://nilima04.github.io/kitchen-hub/add/groceries.html) · [Dinner](https://nilima04.github.io/kitchen-hub/add/dinner.html) · [Calendar](https://nilima04.github.io/kitchen-hub/add/calendar.html)
+
 ![Kitchen Hub on the TV, daytime](docs/tv-day.png)
 
 ## Why I built it
@@ -38,6 +40,20 @@ The hard requirement was that it be easy for everyone, including my parents. Nob
 - **Bangla and English.** The family is bilingual, so the phone pages switch languages with one tap, and dishes carry both names.
 - **Readable from across the room.** Text is sized for a 55" screen viewed from the counter, there's one widget per question ("what's today?", "when's the next prayer?"), and color only marks the widget headings.
 - **Built for a cheap TV.** Android TV browsers vary, so the glass effect falls back to solid cards when blur isn't supported, and the layout scales to any resolution from a single 1920×1080 design.
+
+## How I'll measure success
+
+The hub only works if the family actually uses it instead of the paper calendar and group texts. Once it's running in our kitchen, I'll track:
+
+| Goal | Metric | Target |
+| --- | --- | --- |
+| Everyone adopts it | Family members who add something in a typical week | All 4 within the first month |
+| It replaces the old system | Paper calendar entries vs. hub entries | Paper calendar retired by week 4 |
+| Fewer missed appointments | Appointments missed or remembered last-minute | Down from the current baseline |
+| Fewer duplicate or forgotten purchases | Grocery runs that miss an item or double-buy | Fewer than 1 a week |
+| Adding is effortless | Time from tapping the sticker to an item saved | Under 10 seconds |
+
+These are targets, not results yet. I'll update this section with real numbers after the first month.
 
 ## How it works
 
@@ -84,7 +100,7 @@ This is a working front-end prototype. Being honest about where it stands:
 ## Run it
 
 ```bash
-git clone https://github.com/<your-username>/kitchen-hub.git
+git clone https://github.com/nilima04/kitchen-hub.git
 cd kitchen-hub
 python3 -m http.server 8000
 ```
