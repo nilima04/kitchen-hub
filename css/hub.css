@@ -6,7 +6,8 @@
   --orange: #C93400; --indigo: #3634A3; --rose: #A2475E;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+html, body { margin: 0; height: 100%; background: #E8E4F3; overflow: hidden; }
+body.is-night { background: #000; }
 body { font-family: Inter, 'Noto Sans Bengali', -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased; color: var(--ink); }
 h2 { margin: 0; }
 

@@ -120,10 +120,12 @@
     }
     const extra = [];
     const rainy = (state.weather || []).filter((w) => w.rain >= 50).map((w) => w.city);
-    if (rainy.length) extra.push('Rain likely in ' + rainy.join(' and '));
+    if (rainy.length === (state.weather || []).length && rainy.length > 1) extra.push('Rain likely in all ' + rainy.length + ' cities');
+    else if (rainy.length) extra.push('Rain likely in ' + (rainy.length > 1 ? rainy.slice(0, -1).join(', ') + ' and ' + rainy[rainy.length - 1] : rainy[0]));
     const open = data.groceries.filter((g) => !g.done);
     if (open.length) extra.push(open.length + ' thing' + (open.length > 1 ? 's' : '') + ' on the grocery list');
-    return esc(parts.join(' ')) + (extra.length ? ' <span>' + esc(extra.join(', ') + '.') + '</span>' : '');
+    const tail = extra.map((x, i) => i === 0 ? x : x.charAt(0).toLowerCase() + x.slice(1)).join('; ');
+    return esc(parts.join(' ')) + (tail ? ' <span>' + esc(tail.charAt(0).toUpperCase() + tail.slice(1) + '.') + '</span>' : '');
   }
 
   function todaysEvents(now, data) {
@@ -150,6 +152,7 @@
     const night = isNight(now);
     $('dayView').hidden = night;
     $('nightView').hidden = !night;
+    document.body.classList.toggle('is-night', night);
 
     const ck = clockParts(now, C.home.tz);
     const np = nextPrayer(now);
